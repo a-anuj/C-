@@ -116,12 +116,34 @@ void aboutQueue(){
 
 }
 
+void aboutPriorityQueue(){
+    //Max-Heap
+    priority_queue<int>pq;
+    pq.push(1);
+    pq.push(45);
+    pq.push(67);
+    pq.push(23);
+    pq.push(12);
+    cout << "Max-Heap : " << pq.top() << endl;
+
+    //Min-Heap
+    priority_queue<int, vector<int>, greater<int>>pq1;
+    pq1.push(1);
+    pq1.push(45);
+    pq1.push(67);
+    pq1.push(23);
+    pq1.push(12);
+    cout << "\nMin-Heap : " << pq1.top() << endl;
+
+}
+
 int main() {
     //aboutPair();
     //aboutVectors();
     //aboutLists();
     //aboutDeque();
     //aboutStacks();
-    aboutQueue();
+    //aboutQueue();
+    aboutPriorityQueue();
     return 0;
 }
