@@ -10,12 +10,12 @@ public:
         cout << "Name : " << name << endl;
         cout << "Roll Number : " << roll << endl;
     }
+
+    Student(string name,int roll):name(name),roll(roll){}
 };
 
 int main(){
-    Student s1;
-    s1.name = "Anuj";
-    s1.roll = 07;
-    s1.printDetails();
+    Student *s1 = new Student("Anuj",07);
+    s1->printDetails();
     return 0;
 }
