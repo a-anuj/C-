@@ -84,7 +84,7 @@ void aboutLists(){
 }
 
 void aboutDeque(){
-    list<pair<int,string>>dq;
+    deque<pair<int,string>>dq;
     dq.emplace_back(1,"Apple");
     dq.emplace_back(2,"Ball");
     dq.emplace_back(3,"Cat");
@@ -94,11 +94,34 @@ void aboutDeque(){
     }
 }
 
+void aboutStacks(){
+    stack<int> st;
+    st.push(1);
+    st.push(2);
+    st.push(3);
+    st.push(4);
+    st.emplace(5);
+    st.pop();
+    cout << st.size() << endl;
+}
+
+void aboutQueue(){
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    cout << "Front Element : " << q.front() << endl;
+    q.pop();
+    cout << "Front Element : " << q.front() << endl;
+
+}
 
 int main() {
     //aboutPair();
     //aboutVectors();
     //aboutLists();
-    aboutDeque();
+    //aboutDeque();
+    //aboutStacks();
+    aboutQueue();
     return 0;
 }
