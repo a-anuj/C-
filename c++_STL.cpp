@@ -71,9 +71,22 @@ void aboutVectors(){
     }
 }
 
+void aboutLists(){
+    list<int> lst;
+    lst.emplace_front(1);
+    lst.emplace_back(2);
+    lst.emplace_front(3);
+    lst.emplace_back(4);
+
+    for(list<int>::iterator it=lst.begin();it!=lst.end();it++){
+        cout << *(it) << endl;
+    }
+}
+
 
 int main() {
     //aboutPair();
-    aboutVectors();
+    //aboutVectors();
+    aboutLists();
     return 0;
 }
