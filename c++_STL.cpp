@@ -83,10 +83,22 @@ void aboutLists(){
     }
 }
 
+void aboutDeque(){
+    list<pair<int,string>>dq;
+    dq.emplace_back(1,"Apple");
+    dq.emplace_back(2,"Ball");
+    dq.emplace_back(3,"Cat");
+
+    for(auto it:dq){
+        cout << "(" << it.first << "," << it.second << ")" << endl;
+    }
+}
+
 
 int main() {
     //aboutPair();
     //aboutVectors();
-    aboutLists();
+    //aboutLists();
+    aboutDeque();
     return 0;
 }
