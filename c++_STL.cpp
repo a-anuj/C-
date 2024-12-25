@@ -15,7 +15,35 @@ void aboutPair(){
 }
 
 
+void aboutVectors(){
+    vector<int> v;
+    v.emplace_back(1);
+    v.emplace_back(2);
+    v.emplace_back(3);
+    vector<int>::iterator it = v.begin();
+    //cout << *(++it) << endl;
+
+    v.emplace_back(4);
+    v.emplace_back(5);
+    v.emplace_back(6);
+    v.emplace_back(7);
+
+    for(vector<int>::iterator it=v.begin();it !=v.end();it++){
+        cout << *(it) << endl;
+    }
+
+    cout << "\n";
+
+    for(auto it : v){
+        cout << it << endl;
+    }
+
+    
+}
+
+
 int main() {
-    aboutPair();
+    //aboutPair();
+    aboutVectors();
     return 0;
 }
