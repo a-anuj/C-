@@ -38,7 +38,24 @@ void aboutVectors(){
         cout << it << endl;
     }
 
-    
+    // v.erase() and v.begin() will always accept only the address value whether to delete or to add
+
+    vector<int> v1 = {1,2,3,4,5};
+    v1.erase(v1.begin()+2,v1.end());
+
+    cout << " \n";
+    for(auto it:v1){
+        cout<<it<<endl;
+    }
+
+    cout << "\n";
+    cout << v1.back();
+    vector<int> v2(v1);
+
+    cout << "Copy Vector : ";
+    for(auto it:v2){
+        cout<<it<<endl;
+    }
 }
 
 
