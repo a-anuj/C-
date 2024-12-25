@@ -50,11 +50,24 @@ void aboutVectors(){
 
     cout << "\n";
     cout << v1.back();
-    vector<int> v2(v1);
+    vector<int> v2;
 
     cout << "Copy Vector : ";
     for(auto it:v2){
         cout<<it<<endl;
+    }
+
+    if(v2.empty()){
+        cout << "\nEmpty Vector";
+    }
+    else{
+        cout << "Not Empty!!";
+    }
+    cout << "\n";
+    vector<int> vec = {1,2,3,4,5,6,7};
+    vec.insert(vec.begin(),2,100);
+    for(auto it : vec){
+        cout << it << endl;
     }
 }
 
