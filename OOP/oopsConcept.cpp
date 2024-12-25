@@ -15,7 +15,7 @@ public:
 };
 
 int main(){
-    Student *s1 = new Student("Anuj",07);
-    s1->printDetails();
+    Student s1 = Student("ABCD",07);
+    s1.printDetails();
     return 0;
 }
