@@ -55,10 +55,48 @@ void radixSort(vector<int> &arr,int n){
     }
 }
 
+/*
+
+void insertionSort(vector<float> &bucket){
+    int n = bucket.size();
+    for(int i=1;i<n;i++){
+        float key = bucket[i];
+        int j = i-1;
+        while(j>=0 && bucket[j]>key){
+            bucket[j+1] = bucket[j];
+            j--;
+        }
+        bucket[j+1] = key;
+    }
+}
+
+void bucketSort(vector<float> &arr){
+    int n = arr.size();
+    vector<vector<float>> buckets(n);
+
+    for(int i=0;i<n;i++){
+        int bucketIndex = n * arr[i];
+        buckets[bucketIndex].emplace_back(arr[i]);
+    }
+
+    for(int i=0;i<n;i++){
+        insertionSort(buckets[i]);
+    }
+
+    int index=0;
+    for(int i=0;i<n;i++){
+        for(float it:buckets[i]){
+            arr[index++] = it;
+        }
+    }
+
+}
+
+*/
 
 int main(){
-    vector<int> arr = {789,345,12,78,34,908};
-    int n = 6;
+    vector<int> arr = {5,4,3,2,1,6,7};
+    int n = 7;
     cout << "Before Sorting : "<<endl;
     printArray(arr,n);
     cout << endl;

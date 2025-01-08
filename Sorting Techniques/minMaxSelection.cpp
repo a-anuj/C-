@@ -27,6 +27,8 @@ void selectionSortMinMax(vector<int> &arr, int n){
             maxindex=minindex;
         }
 
+        swap(arr[right],arr[maxindex]);
+
         left++;
         right--;
     }
