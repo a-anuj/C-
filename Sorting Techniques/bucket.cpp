@@ -2,17 +2,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void print(vector<float> &arr,int n){
-    for(float i:arr){
+void print(vector<int> &arr,int n){
+    for(int i:arr){
         cout << i << " ";
     }
     cout << endl;
 }
 
-void insertionSort(vector<float>& bucket){
+void insertionSort(vector<int>& bucket){
     int n = bucket.size();
     for(size_t i=1;i<n;i++){
-        float key = bucket[i];
+        int key = bucket[i];
         int j = i-1;
         while(j>=0 && bucket[j]>key){
             bucket[j+1] = bucket[j];
@@ -23,8 +23,8 @@ void insertionSort(vector<float>& bucket){
 }
 
 
-int findMaxElement(vector<float> &arr,int n){
-    float max = arr[0];
+int findMaxElement(vector<int> &arr,int n){
+    int max = arr[0];
     for(int i=1;i<n;i++){
         if (arr[i]>max){
             max = arr[i];
@@ -36,35 +36,35 @@ int findMaxElement(vector<float> &arr,int n){
 
 
 
-void bucketSort(vector<float>& arr){
+void bucketSort(vector<int>& arr){
     int n = arr.size();
-    vector<vector<float>> buckets(n);
-    float maxi = findMaxElement(arr,n);
+    int maxi = findMaxElement(arr,n);
+    int min = *min_element(arr.begin(),arr.end());
+    int bsize = ((maxi-min)/(n))+1;
+    vector<vector<int>> buckets(bsize);
+    
     for(int i=0;i<n;i++){
         int bucketIndex = (arr[i]-1)/(5-1);
         buckets[bucketIndex].emplace_back(arr[i]);
     }
-
+    
     for(int i=0;i<n;i++){
         insertionSort(buckets[i]);
     }
 
     int index = 0;
     for(int i=0;i<n;i++){
-        for(float j:buckets[i]){
+        for(int j:buckets[i]){
             arr[index++] = j;
         }
     }
 }
 
 int main(){
-    vector<float> arr = {5,4,3,2,1};
+    vector<int> arr = {5,4,3,2,1};
     cout << "Before sorting : ";
     print(arr,arr.size());
     bucketSort(arr);
     cout << "Before sorting : ";
     print(arr,arr.size());
 }
-
-
-
